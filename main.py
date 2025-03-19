@@ -207,6 +207,7 @@ def main():
         if check_game_over(placeholders, lives):
             break
         lives += 1
+        update_game_state(get_user_guess(), chosen_word, placeholders, lives, guessed_letters, missed_letters)
 
 
 # TODO: Call the main function to start the game
