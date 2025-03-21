@@ -1,33 +1,9 @@
 import random
+from hangman_words import WORD_BANK
 
 # Hangman Game TODO List
 
 # DONE: Import necessary modules (e.g., random, sys)
-
-# DONE: Create a word bank (list of words) for the game
-WORD_BANK = [
-    "python",
-    "java",
-    "kotlin",
-    "javascript",
-    "typescript",
-    "swift",
-    "objective",
-    "ruby",
-    "perl",
-    "haskell",
-    "scala",
-    "elixir",
-    "rust",
-    "go",
-    "dart",
-    "csharp",
-    "cplusplus",
-    "php",
-    "html",
-    "css",
-]
-
 
 # DONE: Implement a function to select a random word from the word bank
 def get_random_word(word_list):
@@ -94,10 +70,10 @@ def update_game_state(guess, chosen_word, masked_word, lives, guessed_letters, m
         elif guess in chosen_word:
             guessed_letters.append(guess)
             masked_word = "".join([letter if letter in guessed_letters else "_" for letter in chosen_word])
-            print(f"Good job! {guess} is in the word.")
+            print(f"Good job! '{guess}' is in the word.")
         else:
             missed_letters.append(guess)
-            print(f"Sorry, {guess} is not in the word.")
+            print(f"Sorry, '{guess}' is not in the word.")
             lives -= 1
     else:
         if guess == chosen_word:
